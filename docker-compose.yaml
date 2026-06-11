@@ -1,7 +1,7 @@
 name: mama-s-toolkit
 
 services:
-  server:
+  mama-s-toolkit:
     image: ghcr.io/dukmos/mama-s-toolkit-container:latest
     restart: unless-stopped
     environment:
