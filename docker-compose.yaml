@@ -1,0 +1,15 @@
+name: mama-s-toolkit
+
+services:
+  server:
+    image: ghcr.io/dukmos/mama-s-toolkit-container:latest
+    restart: unless-stopped
+    environment:
+      LUNAR_ADMIN_WEBHOOK: http://server:8082/api/admin/master-data/reload
+      LUNAR_ADMIN_TOKEN: ${LUNAR_ADMIN_TOKEN:-}
+    volumes:
+      - ./db:/opt/lunar-tear/server/db
+      - ./assets:/opt/lunar-tear/server/assets
+      - ./Engels:/opt/Engels
+    ports:
+      - 8081:8081
