@@ -19,6 +19,7 @@ RUN chown 1000:1000 /opt/mama-toolkit
 USER 1000
 
 COPY --from=builder /usr/local/src/mama-toolkit .
+COPY mama-s-toolkit/images ./images
 
 
 ENTRYPOINT /opt/mama-toolkit/mama-toolkit --webhook=$LUNAR_ADMIN_WEBHOOK
